@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D03F25D2-461E-4BA0-90B8-FD58B41DACD1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MarRoverChallenge</RootNamespace>
+    <AssemblyName>MarRoverChallenge</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\packages\Machine.Specifications.0.9.1\lib\net45\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\packages\Machine.Specifications.0.9.1\lib\net45\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\packages\Machine.Specifications.Should.0.7.2\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Implementation\Exceptions\CommandNotRecognizedException.cs" />
+    <Compile Include="Implementation\MarsRover.cs" />
+    <Compile Include="Implementation\Movers\Direction.cs" />
+    <Compile Include="Implementation\Movers\EastFacingMover.cs" />
+    <Compile Include="Implementation\Movers\IDirectionFacingMover.cs" />
+    <Compile Include="Implementation\Movers\NavigationCommand.cs" />
+    <Compile Include="Implementation\Movers\NorthFacingMover.cs" />
+    <Compile Include="Implementation\Movers\SouthFacingMover.cs" />
+    <Compile Include="Implementation\Movers\WestFacingMover.cs" />
+    <Compile Include="Implementation\Positions\BoundedPosition.cs" />
+    <Compile Include="Implementation\Positions\Bounds.cs" />
+    <Compile Include="Implementation\Positions\FacingTracker.cs" />
+    <Compile Include="Implementation\Positions\Position.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\Position Tests\given_two_positions.cs" />
+    <Compile Include="Tests\Position Tests\when_the_two_positions_are_identical.cs" />
+    <Compile Include="Tests\Position Tests\when_the_two_positions_are_not_identical.cs" />
+    <Compile Include="Tests\Rover Move Tests\Complex Rover Moving Tests\given_5_by_5_grid_with_rover_facing_east_at_location_0_0_when_moving_with_a_series_of_commands.cs" />
+    <Compile Include="Tests\Rover Move Tests\Complex Rover Moving Tests\given_5_by_5_grid_with_rover_facing_east_at_location_3_3_when_moving_with_a_series_of_commands.cs" />
+    <Compile Include="Tests\Rover Move Tests\Complex Rover Moving Tests\given_5_by_5_grid_with_rover_facing_north_at_location_0_0_when_moving_with_a_series_of_commands.cs" />
+    <Compile Include="Tests\Rover Move Tests\Complex Rover Moving Tests\given_100_by_100_grid_with_rover_facing_north_at_location_0_0_when_moving_with_a_series_of_commands.cs" />
+    <Compile Include="Tests\Rover Move Tests\East Facing Rover Tests\given_rover_facing_east_at_location1100_when_moving_backward_by_one.cs" />
+    <Compile Include="Tests\Rover Move Tests\East Facing Rover Tests\given_rover_facing_east_at_location1100_when_moving_forward_by_one.cs" />
+    <Compile Include="Tests\Rover Move Tests\North Facing Rover Tests\given_rover_facing_north_at_location22_when_moving_backward_by_two.cs" />
+    <Compile Include="Tests\Rover Move Tests\North Facing Rover Tests\given_rover_facing_north_at_location22_when_moving_forward_by_one.cs" />
+    <Compile Include="Tests\Rover Move Tests\North Facing Rover Tests\given_rover_facing_north_at_location22_when_moving_forward_by_two.cs" />
+    <Compile Include="Tests\Rover Move Tests\North Facing Rover Tests\given_rover_facing_north_at_location_2_99_when_moving_reverse_by_one.cs" />
+    <Compile Include="Tests\Rover Move Tests\RoverTestsBase.cs" />
+    <Compile Include="Tests\Rover Move Tests\South Facing Rover Tests\given_rover_facing_south_at_location1100_when_moving_forward_by_one.cs" />
+    <Compile Include="Tests\Rover Move Tests\South Facing Rover Tests\given_rover_facing_south_at_location11_when_moving_backward_by_one.cs" />
+    <Compile Include="Tests\Rover Move Tests\South Facing Rover Tests\given_rover_facing_south_at_location11_when_moving_forward_by_one.cs" />
+    <Compile Include="Tests\Rover Move Tests\South Facing Rover Tests\given_rover_facing_south_at_location_1_100_when_moving_backward_by_one.cs" />
+    <Compile Include="Tests\Rover Move Tests\West Facing Rover Tests\given_rover_facing_west_at_location1100_when_moving_backward_by_one.cs" />
+    <Compile Include="Tests\Rover Move Tests\when_moving_in_reverse_by_one1.cs" />
+    <Compile Include="Tests\Rover Turn Tests\given_rover_facing_north_and_turning_left_once.cs" />
+    <Compile Include="Tests\Rover Turn Tests\given_rover_facing_north_and_turning_right_once.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
