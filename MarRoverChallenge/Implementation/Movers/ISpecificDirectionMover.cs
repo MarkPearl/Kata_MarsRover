@@ -1,6 +1,6 @@
 ﻿namespace MarRoverChallenge.Implementation.Movers
 {
-	public interface IDirectionFacingMover
+	public interface ISpecificDirectionMover
 	{
 		void Move(char command);
 	}

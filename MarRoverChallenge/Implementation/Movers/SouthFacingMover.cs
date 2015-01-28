@@ -3,7 +3,7 @@ using MarRoverChallenge.Implementation.Positions;
 
 namespace MarRoverChallenge.Implementation.Movers
 {
-	internal class SouthFacingMover : IDirectionFacingMover
+	internal class SouthFacingMover : ISpecificDirectionMover
 	{
 		readonly BoundedPosition _boundedPosition;
 		readonly FacingTracker _facingTracker;

@@ -8,7 +8,7 @@ namespace MarRoverChallenge.Implementation
 	{		
 		readonly FacingTracker _facingTracker;
 		readonly BoundedPosition _boundedPosition;
-		readonly Dictionary<Direction, IDirectionFacingMover> _movers;
+		readonly Dictionary<Direction, ISpecificDirectionMover> _movers;
 			
 		MarsRover(			
 			Direction initialDirection, 
@@ -17,7 +17,7 @@ namespace MarRoverChallenge.Implementation
 			_facingTracker = FacingTracker.SetDirection(initialDirection);
 			_boundedPosition = boundedPosition;
 			
-			_movers = new Dictionary<Direction, IDirectionFacingMover>
+			_movers = new Dictionary<Direction, ISpecificDirectionMover>
 			{
 				{Direction.N, new NorthFacingMover(_boundedPosition, _facingTracker)},
 				{Direction.S, new SouthFacingMover(_boundedPosition, _facingTracker)},

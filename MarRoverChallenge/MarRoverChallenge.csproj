@@ -52,7 +52,7 @@
     <Compile Include="Implementation\MarsRover.cs" />
     <Compile Include="Implementation\Movers\Direction.cs" />
     <Compile Include="Implementation\Movers\EastFacingMover.cs" />
-    <Compile Include="Implementation\Movers\IDirectionFacingMover.cs" />
+    <Compile Include="Implementation\Movers\ISpecificDirectionMover.cs" />
     <Compile Include="Implementation\Movers\NavigationCommand.cs" />
     <Compile Include="Implementation\Movers\NorthFacingMover.cs" />
     <Compile Include="Implementation\Movers\SouthFacingMover.cs" />
